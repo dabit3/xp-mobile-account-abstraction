@@ -2,6 +2,8 @@
 
 Built with Privy wallet, Biconomy, and Airstack
 
+Send payments to wallets or ENS, Lens, or Farcaster profiles
+
 ![Cross-platform On-chain Payments with Social Login and account abstraction](header.png)
 
 ### To build this app

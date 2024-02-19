@@ -5,7 +5,7 @@ import {base} from 'viem/chains';
 export function PrivyProvider({ children }) {
   return (
     <Provider
-        appId='clsq47yxx00q0tqmb6zy8yknq'
+        appId={process.EXPO_PUBLIC_PRIVY_APP_ID}
         config={{
             loginMethods: ['email', 'wallet', 'google'],
             defaultChain: base,

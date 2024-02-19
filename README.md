@@ -1,6 +1,6 @@
 ## Cross-platform On-chain Payments with Social Login and account abstraction
 
-Built with Privy wallet, Biconomy, and Airstack
+Built with Expo, Privy Wallet, Biconomy, and Airstack
 
 Send payments to wallets or ENS, Lens, or Farcaster profiles
 

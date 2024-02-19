@@ -128,7 +128,9 @@ function App() {
         const ensAddress = await publicClient.getEnsAddress({
           name: normalize(_toAddress), 
         })
-        _toAddress = ensAddress
+        if (ensAddress) {
+          _toAddress = ensAddress
+        }
       }
       if (_toAddress.includes('.lens') || _toAddress.includes('lens/')) {
         const response = await fetch('https://api.airstack.xyz/graphql', {
@@ -239,6 +241,7 @@ function App() {
           <TextInput
             onChangeText={setAmount}
             placeholder="$0"
+            placeholderTextColor={'rgba(255, 255, 255, .6)'}
             value={amount ? amount.toString() : null}
             style={styles.inputAmount}
           />
@@ -250,6 +253,7 @@ function App() {
             <InputField
               onChangeText={setToAddress}
               placeholder="Recipient"
+              placeholderTextColor={'rgba(255, 255, 255, .6)'}
               value={toAddress}
               autoCapitalize="none"
               autoCorrect={false}
@@ -317,7 +321,7 @@ function App() {
 
   return (
     <LinearGradient
-      colors={['#080c19', '#131f30']}
+      colors={['#6c08af', '#8234a0']}
       style={styles.container}
     >
       {
@@ -360,21 +364,31 @@ const styles = StyleSheet.create({
     fontSize: 110,
     color: 'rgba(255, 255, 255, .8)'
   },
-  welcomeText: {fontSize: 16, color: 'white', textAlign: 'center'},
+  welcomeText: {
+    fontSize: 18, color: 'white', textAlign: 'center'},
   recipientInput: { marginTop: 20, borderWidth: 0 },
   recipientInputField: {
     textAlign: 'center',
     fontSize: 28, color: 'rgba(255, 255, 255, .8)'
   },
-  sendButton: {borderRadius: 44, marginTop: 20, width: 300, height: 50},
+  sendButton: {
+    backgroundColor: '#000',
+    borderRadius: 44, marginTop: 20, width: 300, height: 50},
   logoutButton: { borderRadius: 44, width: 300, marginTop: 10, height: 50 },
   logo: {
     width: 140, height: 140, marginBottom: 30
   },
-  googleButton: {borderRadius: 44, width: 300},
+  googleButton: {
+    borderRadius: 44,
+    width: 300,
+    backgroundColor: '#000000',
+    height: 50
+  },
   googleButtonText: {marginLeft: 10},
   emailButton: {
-    borderRadius: 44, width: 300, marginTop: 10
+    borderRadius: 44, width: 300, marginTop: 10,
+    backgroundColor: '#000000',
+    height: 50
   },
   emailButtonText: {marginLeft: 10},
   createWalletButtonText: {marginLeft: 10},
